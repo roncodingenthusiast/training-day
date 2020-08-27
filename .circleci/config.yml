@@ -2,14 +2,12 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/clojure:openjdk-8-tools-deps-1.10.0.411
+      - image: circleci/clojure:lein-2.9.3
     steps:
       - checkout
       - run:
-          name: The First Step
-          command: lein test
+          name: Pre Test Clean
+          command: lein clean
       - run:
-          name: Code Has Arrived
-          command: |
-            ls -al
-            echo '^^^That should look familiar^^^'
+          name: Test
+          command: lein clean
