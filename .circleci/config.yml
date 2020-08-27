@@ -10,4 +10,4 @@ jobs:
           command: lein clean
       - run:
           name: Test
-          command: lein clean
+          command: lein test
